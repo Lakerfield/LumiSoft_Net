@@ -322,6 +322,7 @@ namespace LumiSoft.Net.Mime.vCard
             set{ m_pItems.SetDecodedValue("NICKNAME",value); }
         }
 
+#if !NETSTANDARD2_0
         /// <summary>
         /// Gets or sets person photo. Returns null if PHOTO: item doesn't exist.
         /// </summary>
@@ -349,6 +350,7 @@ namespace LumiSoft.Net.Mime.vCard
                 }
             }
         }
+#endif
 
         /// <summary>
         /// Gets or sets birth date. Returns DateTime.MinValue if not set.

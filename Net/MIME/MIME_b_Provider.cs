@@ -19,7 +19,9 @@ namespace LumiSoft.Net.MIME
         public MIME_b_Provider()
         {
             m_pBodyTypes = new Dictionary<string,Type>(StringComparer.CurrentCultureIgnoreCase);
+#if !NETSTANDARD2_0
             m_pBodyTypes.Add("application/pkcs7-mime",typeof(MIME_b_ApplicationPkcs7Mime));
+#endif
             m_pBodyTypes.Add("message/rfc822",typeof(MIME_b_MessageRfc822));
             m_pBodyTypes.Add("message/delivery-status",typeof(MIME_b_MessageDeliveryStatus));
             m_pBodyTypes.Add("multipart/alternative",typeof(MIME_b_MultipartAlternative));
@@ -30,7 +32,9 @@ namespace LumiSoft.Net.MIME
             m_pBodyTypes.Add("multipart/parallel",typeof(MIME_b_MultipartParallel));
             m_pBodyTypes.Add("multipart/related",typeof(MIME_b_MultipartRelated));
             m_pBodyTypes.Add("multipart/report",typeof(MIME_b_MultipartReport));
+#if !NETSTANDARD2_0
             m_pBodyTypes.Add("multipart/signed",typeof(MIME_b_MultipartSigned));
+#endif
         }
 
 

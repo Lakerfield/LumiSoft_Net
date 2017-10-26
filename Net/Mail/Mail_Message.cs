@@ -145,6 +145,7 @@ namespace LumiSoft.Net.Mail
 
         #region static method Create_MultipartSigned
 
+#if !NETSTANDARD2_0
         /// <summary>
         /// Creates mail message.
         /// </summary>
@@ -274,6 +275,7 @@ namespace LumiSoft.Net.Mail
             return msg;
         }
 
+#endif
         #endregion
 
         #region static method ParseFromByte

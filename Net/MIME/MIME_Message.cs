@@ -249,6 +249,7 @@ namespace LumiSoft.Net.MIME
 
         #region method ConvertToMultipartSigned
 
+      #if !NETSTANDARD2_0
         /// <summary>
         /// Converts message to multipart/signed message.
         /// </summary>
@@ -275,11 +276,13 @@ namespace LumiSoft.Net.MIME
             multipartSigned.SetCertificate(signerCert);
             multipartSigned.BodyParts.Add(msgEntity);
         }
+        #endif
 
         #endregion
 
         #region method VerifySignatures
 
+#if !NETSTANDARD2_0
         /// <summary>
         /// Checks SMIME signed enities signtures. NOTE: For not signed messsages this method always return true.
         /// </summary>
@@ -302,6 +305,7 @@ namespace LumiSoft.Net.MIME
 
             return true;
         }
+#endif
 
         #endregion
 
